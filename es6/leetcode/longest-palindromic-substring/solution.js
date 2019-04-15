@@ -6,7 +6,7 @@ var longestPalindrome = function(s) {
   let output = '';
   for(let i = 0; i < s.length; i++){
     for(let j = i+1; j <= s.length; j++){
-      if(testPalindrome(s.substring(i,j)) && s.substring(i,j).length >= output.length){
+      if(testPalindrome(s.substring(i,j)) && s.substring(i,j).length > output.length){
         output = s.substring(i,j)
       }
       if(output.length > j - i){
@@ -23,7 +23,7 @@ var longestPalindrome = function(s) {
 
 var testPalindrome = function(s) {
   let index = 0;
-    while(s[index] === s[s.length-index] && s.length / 2 > index){
+    while(s[index] === s[s.length-1-index] && s.length / 2 > index){
         index++
     }
     if(index >= s.length / 2){
